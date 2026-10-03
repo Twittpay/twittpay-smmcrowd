@@ -31,9 +31,6 @@
 
    4. Admin -> Payment Gateways -> open "Bkash/Nagad/Rocket/Upay" and fill in:
 
-        Endpoint URL      your own gateway address, e.g.
-                          https://checkout.twittpay.com
-                          (the API host shown on your gateway's developer page)
 
         Brand Key           from your gateway dashboard, under Brands
 
@@ -60,8 +57,6 @@
      can only ever be matched back to its own deposit.
 
  WHAT TO WATCH
-   * The Endpoint URL is your API host. Pasting the whole endpoint or a trailing
-     /api is fine - only the scheme and host are used.
    * The ipn route must be reachable from the internet. Your gateway's server
      calls it directly.
    * This module sends the user back to the ipn route as well, so a deposit still
@@ -86,8 +81,6 @@
      for the next webhook.
    * The original passed the raw API error message back to the user. An error
      string can carry your Brand Key back out, so this port shows a plain message.
-   * The API URL is shipped empty. The original shipped a sandbox address as its
-     default, which is easy to leave in place by accident.
    * The gateway row is inserted switched off, so a half-configured gateway cannot
      appear on your deposit page.
 
