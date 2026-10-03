@@ -28,7 +28,7 @@ class ProcessController extends Controller
         $gateway_currency = $deposit->gatewayCurrency();
         $params           = json_decode($gateway_currency->gateway_parameter);
 
-        if (empty($params->api_key->value ?? $params->api_key ?? '') || empty($params->api_url->value ?? $params->api_url ?? '')) {
+        if (empty($params->api_key->value ?? $params->api_key ?? '')) {
             return json_encode([
                 'error'   => true,
                 'message' => 'This payment method is not fully configured yet.',
